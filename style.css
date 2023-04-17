@@ -1,0 +1,362 @@
+*
+{
+    margin: 0;
+    padding:0;
+
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #deae73;
+   /*font-family: font-family: 'Almarai', sans-serif;*/ 
+    font-family: 'Great Vibes', cursive;
+    /*font-family: 'Open Sans', sans-serif;*/
+    /*   font-family: 'Source Sans Pro', sans-serif;*/
+ 
+}
+.container{
+    position: relative;
+    top:50px;
+   
+
+}
+.cup{
+    position: relative;
+    width:280px;
+    height: 300px;
+    background: linear-gradient(to right ,#f9f9f9,#d9d9d9);
+    border-bottom-left-radius:45% ;
+    border-bottom-right-radius:45% ;
+}
+.top{
+    position: absolute;
+    top:-30px;
+    left:0;
+    width: 100%;
+    height: 60px;
+    background:linear-gradient(to right ,#f9f9f9,#d9d9d9) ;
+    border-radius: 50%;
+   
+}
+.circle{
+    position: absolute;
+    top:5px;
+    left:10px;
+    width: calc(100% - 20px);
+    height: 50px;
+    background:linear-gradient(to left ,#f9f9f9,#d9d9d9) ;
+    border-radius: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.tea{
+    position: absolute;
+    top: 20px;
+    left:0;
+    width:100%;
+    height:100%;
+    background:linear-gradient(#a56818,#a56818) ;
+    border-radius: 50%;
+}
+.handle{
+    position: absolute;
+    right: -70px;
+    top:20px;
+    width:150px;
+    height:180px;
+    border: 25px solid #dcdcdc;
+    border-left: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-radius: 50%;
+    transform: rotate(40deg);
+
+}
+.plate{
+    position: absolute;
+    bottom:-50px;
+    left:50%;
+   transform:translateX(-50%);
+   width:500px;
+   height:200px;
+   background: linear-gradient(to right,#f9f9f9,#e7e7e7);
+   border-radius: 50%;
+   box-shadow:0 35px 35px rgba(0,0,0,0.2);
+
+
+
+}
+.plate::before{
+    content: '';
+    position: absolute;
+    top:10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 50%;
+    background: linear-gradient(to left,#f9f9f9,#e7e7e7);
+    
+}
+.plate::after{
+    content: '';
+    position: absolute;
+    top:30px;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+   
+    background: radial-gradient(rbg(0,0,0,0.2) 25%,transparent,transparent);
+    border-radius:50%;
+}
+.vapour{
+position: relative;
+display :flex;
+z-index: 1;
+padding:0 20px;
+}
+.vapour span{
+
+position:relative;
+bottom: 50px;
+display: block;
+margin:0 2px 50px;
+background:#fff;
+min-width: 8px;
+height:120px;
+border-radius: 50%;
+animation :animate 5s linear infinite;
+opacity: 0;
+filter: blur(8px);
+animation-delay: calc(var(--i)* -0.5s);
+}
+
+@keyframes animate {
+   0% 
+    {
+        transform: translateY(0) scaleX(1);
+        opacity: 0;
+    }
+    50% 
+    {
+        transform: translateY(-150px) scaleX(5);
+        
+    }
+    15% 
+    {
+        opacity: 1;
+    }    
+     50% 
+    {
+        transform: translateY(-150px) scaleX(5);
+        
+    } 
+    95% 
+    {
+        opacity: 0;
+    }
+   100%
+    {
+        transform: translateY(-300px) scaleX(5);
+        
+    }
+}
+.loader-wrapper{
+    font-family: 'Source Sans Pro',sans-serif ;
+  
+    position: absolute;
+    top:0;
+    right :0;
+    bottom: 0;
+    left: 0;
+
+
+}
+.sandwatch-holder{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform:translate(-50%,-50%) rotate(0deg);
+    width:43px;
+   /*animation:rotateHolder 2s linear infinite;*/ 
+    
+
+}
+.sandwatch-holder:after{
+    content:"";
+    position: absolute;
+    width: 2px;
+    height:20px;
+    background: #cba163; 
+    left:18px;
+    top:60px;
+    transform:translate(-50%,-50%);
+    margin:-17px 0 0;
+    animation :moveStream 2s linear infinite;
+
+
+}
+.sandwatch-top, .sandwatch-bottom{
+width:35px;
+height :35px;
+position:relative;
+border:6px solid #a56818;
+border-right:2px solid #a56818;
+border-top:2px solid #a56818;
+border-radius: 50px 100px 50px 30px;
+overflow: hidden;
+
+
+}
+.sandwatch-top{
+    transform: rotate(-45deg);
+}
+.sandwatch-bottom{
+    transform: rotate(135deg);
+    margin :12px 0 0 ;
+
+}
+.sandwatch-holder:before{
+    position:absolute;
+    content:"";
+    width:8px;
+    height:12px;
+    background:#a56818;
+    left: 42%;
+    top:50%;
+    transform:translate(-50%,-50%);
+}
+.sandwatch-top:before{
+       content: "";
+       position:absolute;
+       width:100%;
+       height:100%;
+       background: #cba163; 
+       border-radius: 0 100px 0 0;
+
+}
+.sandwatch-bottom:after{
+    content: "";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background: #cba163; 
+    border-radius: 0 100px 40px 0;
+}
+.sandwatch-top:before{
+    transform: translate(0,0);
+    animation: dropSand 2s linear infinite;
+}
+.sandwatch-bottom:before{
+    transform: translate(25px, -25px);
+  
+    border-radius:0 0 0 12px;
+    animation:fillSand 2s linear infinite;
+}
+@keyframes dropSand{
+     100% {
+        transform: translate(-22px, 22px);
+     }
+}
+@keyframes fillSand{
+    5% {
+       transform: translate(25px, -25px);
+    }
+    100%{
+        transform: translate (-1px, 0);
+    }
+}
+@keyframes rotateHolder {
+    0%{
+        transform:translate(-50%,-50%) rotate(0deg);
+    }
+    90%{
+        transform:translate(-50%,-50%) rotate(0deg);
+    }
+    100%{
+        transform:translate(-50%,-50%) rotate(180deg);
+    }
+}
+@keyframes  moveStream {
+    10%{
+        margine: 17px 0 0;
+    }
+    100%{
+        margine: 17px 0 0;
+    }
+}
+
+.gd {
+    position: relative;
+    top:55px;
+    left:10px;
+   
+    background:red ;
+
+ 
+}.prg {
+    position: absolute;
+    top:78px;
+    left:148px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 28px;
+    font-weight: 580;
+   
+    overflow: visible;
+ 
+}
+.h23 {
+    position: relative;
+    top:55px;
+    left:10px;
+   
+ 
+}
+.h2{
+    position: absolute;
+    top:50px;
+    left:148px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 20px;
+    font-weight: 600;
+   
+    overflow: visible;
+ 
+}
+.nm{
+    position: relative;
+    top:55px;
+    left:10px;
+   
+ 
+}
+.n{
+    position: absolute;
+    top:285px;
+    left:355px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 30px;
+    font-weight: 200;
+   
+    overflow: visible;
+ 
+}
+.ls{
+    position: relative;
+    top:55px;
+    left:10px;
+   
+ 
+}
+.l{
+    position: absolute;
+    top:285px;
+    left:438px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 30px;
+    font-weight: 200;
+   
+    overflow: visible;
+ 
+}
